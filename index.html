@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrices Dispersas</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h1, h2, h3 { color: #333; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Matrices Dispersas</h1>
+    <h2>Definición</h2>
+    <ul>
+        <li>Matrices donde la mayoría de sus elementos son ceros</li>
+    </ul>
+    <h2>Características</h2>
+    <ul>
+        <li><strong>Ahorro de Memoria</strong> Solo se guardan los valores no cero</li>
+        <li><strong>Eficiencia</strong> Uso de memoria depende del número de valores no cero</li>
+        <li><strong>El patrón de dispersión</strong> (distribución de los valores no cero) afecta la eficiencia de ciertos formatos</li>
+    </ul>
+    <h2>Aplicaciones</h2>
+    <ul>
+        <li>Resolución de sistemas de ecuaciones lineales</li>
+        <li>Procesamiento de Imágenes</li>
+        <li>Minado de Datos</li>
+        <li>Sistemas de Recomendación</li>
+        <li>Redes Neuronales</li>
+    </ul>
+    <h2>Características de formato (Arreglos)</h2>
+    <h3>CSR</h3>
+    <ul>
+        <li><strong>Ventajas</strong> Rápido para acceder a elementos en una fila específica</li>
+        <li><strong>Desventajas</strong> Cortar columnas es lento</li>
+    </ul>
+    <h3>CSC</h3>
+    <ul>
+        <li><strong>Ventajas</strong> Rápido para acceder a elementos en una columna específica</li>
+        <li><strong>Desventajas</strong> Cortar filas es lento</li>
+    </ul>
+    <h3>COO</h3>
+    <ul>
+        <li><strong>Ventajas</strong> Bueno para construir y modificar matrices</li>
+        <li><strong>Desventajas</strong> Menos eficiente para acceso rápido y operaciones aritméticas</li>
+    </ul>
+    <h2>Formatos</h2>
+    <ul>
+        <li><strong>Listas Enlazadas</strong>
+            <ul>
+                <li><strong>Simples</strong> Cada nodo representa una celda no nula. Contiene valor, columna y referencia al siguiente nodo</li>
+                <li><strong>Por Filas</strong> Cada fila es una lista enlazada separada. Cada nodo en la lista representa una celda no nula con valor y columna</li>
+            </ul>
+        </li>
+    </ul>
+    <h2>Arreglos</h2>
+    <h3>Fila Dispersa Comprimida (CSR)</h3>
+    <ul>
+        <li>Almacena los elementos no nulos por filas usando tres arreglos: valores, índices de columna y punteros a filas</li>
+        <li><strong>Ejemplo</strong> <img src="https://docs.nvidia.com/nvpl/_static/sparse/_images/csr.png" alt="CSR" width="200" height="100"/></li>
+    </ul>
+    <h3>Columna Dispersa Comprimida (CSC)</h3>
+    <ul>
+        <li>Almacena los elementos no nulos por columnas usando tres arreglos: valores, índices de fila y punteros a columnas</li>
+        <li><strong>Ejemplo</strong> <img src="https://docs.nvidia.com/nvpl/_static/sparse/_images/csc.png" alt="CSC" width="200" height="100"/></li>
+    </ul>
+    <h3>Lista de Coordenadas (COO)</h3>
+    <ul>
+        <li>Almacena elementos no nulos como tuplas de índices de fila, columna y valor</li>
+        <li><strong>Ejemplo</strong> <img src="https://docs.nvidia.com/nvpl/_static/sparse/_images/coo.png" alt="COO" width="200" height="100"/></li>
+    </ul>
+</body>
+</html>
